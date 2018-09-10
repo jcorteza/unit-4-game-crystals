@@ -1,0 +1,80 @@
+body {
+    background: url("../images/asteroids.jpg");
+}
+.main-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.col {
+    width: 45%;
+    height: auto;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 2%;
+    margin-bottom: 4%;
+}
+
+#instructions {
+    margin-right: 2%;
+}
+
+#game-content {
+    margin-left: 2%;
+    display: none;
+}
+
+#stats {
+    display: none;
+}
+
+h1 {
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: 1.75rem;
+    color: white;
+    font-family: 'Fugaz One', cursive;
+
+}
+
+p {
+    margin-bottom: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+#game-content p {
+    font-size: 1.25rem
+}
+
+button {
+    font-size: 1.25rem;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+img {
+    max-width: 225px;
+    width: 25%;
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    .col {
+        width: 100%;
+        height: auto;
+    }
+    img {
+        width: 50%;
+        height: auto;
+    }
+    #instructions {
+    margin-right: 0%;
+    }
+    #game-content {
+        margin-left: 0%;
+    }
+}

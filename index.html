@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Fugaz+One|Roboto" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="main-container">
+        <h1>Crystal Collector</h1>
+        <div id="instructions" class="col">
+            <p>You will be given a random score-goal at the start of the game. It is your goal to match this score using the four crystals. When clicked, each crytal adds a specific number to your current score.</p>
+            <p>Match your current score with the score-goal to win the game. If your score passes the score-goal, you lose the game.</p>
+            <p>During each new round, the crystals' values change. Figure out the value of each crystal by clicking on them.</p>
+            <div id="stats">
+                <p>Wins: <span id="winStat">0</span></p>
+                <p>Losses: <span id="lossStat">0</span></p>
+            </div>
+            <button id="startGame">Start New Game</button>
+        </div>
+        <div id="game-content" class="col">
+            <div id="scoreDiv">
+            </div>
+            <div id="results">
+            </div>
+            <div id="crystalsDiv">
+            </div> 
+        </div>
+    </div>
+    <script type="text/javascript" src="./assets/javascript/game.js"></script>
+</body>
+</html>
