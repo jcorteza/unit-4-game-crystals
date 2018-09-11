@@ -36,10 +36,16 @@ crystalsArray[3] = crystal4;
 function valueGenerator(crystalsArray) {
     let min = Math.ceil(2);
     let max = Math.floor(12);
+    let valsArray = [];
     for(i = 0; i < 4; i++) {
-        let value =  Math.floor(Math.random() * (max - min + 1) + min);
-        crystalsArray[i]["crystalVal"] = value;
-        console.log(crystalsArray[i]);
+        while (valsArray.length < (i + 1)) {
+            let value =  Math.floor(Math.random() * (max - min + 1) + min);
+            if(!valsArray.includes(value)) {
+                valsArray.push(value);
+                crystalsArray[i]["crystalVal"] = value;
+                //console.log(crystalsArray[i]);
+            } 
+        }
     }
 }
 
@@ -47,7 +53,7 @@ function valueGenerator(crystalsArray) {
 function clearVals(crystalsArray) {
     for(i = 0; i < crystalsArray.length; i++) {
         crystalsArray[i]["crystalVal"] = undefined;
-        console.log(crystalsArray[i]);
+        //console.log(crystalsArray[i]);
     }
 }
 
@@ -88,23 +94,43 @@ function reset(crystalsArray) {
     clearVals(crystalsArray);
 }
 
+/* functions changes change button on hover-in and hover-out */
+function btnHoverIn() {
+    $("#startGame").animate({width: "100%"}, 300);
+}
+function btnHoverOut() {
+    $("#startGame").animate({width: "162"}, 300);
+}
+
+/* functions animate crystals when hovered */
+function crystalHoverIn(event) {
+    $("img").not(event.target).css("opacity", ".5");
+}
+function crystalHoverOut() {
+    $("img").css("opacity", "1");
+}
 $(document).ready(function() {
+    $("#startGame").hover(btnHoverIn, btnHoverOut);
     $("#startGame").click(function() {
         gameSetup();
+        $("img").hover(crystalHoverIn, crystalHoverOut);
         $("#crystalsDiv").on("click", function(event) {
             let crystalClicked = $(event.target);
             let crystalClickedVal = $(crystalClicked).attr("value");
             userScore += parseInt(crystalClickedVal);
-            console.log(userScore);
+            //console.log(userScore);
             $("#userScore").text(userScore);
             if(userScore === scoreGoal) {
                 //alert("You won the game!");
                 let resultsText =  $("<p>").text("You won the game! Click on the Start New Game button to start a new round.");
                 $(resultsText).appendTo("#results");
                 $("#crystalsDiv").off("click");
+                $("#img").off("hover");
                 wins++;
                 $("#winStat").text(wins);
                 $("#stats").css("display", "block");
+                $("img").off("mouseenter mouseleave");
+                crystalHoverOut();
             }
             else if (userScore > scoreGoal) {
                 //alert("You lost.");
@@ -113,6 +139,8 @@ $(document).ready(function() {
                 losses++;
                 $("#lossStat").text(losses);
                 $("#stats").css("display", "block");
+                $("img").off("mouseenter mouseleave");
+                crystalHoverOut();
             }
         });
     });

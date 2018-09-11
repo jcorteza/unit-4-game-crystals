@@ -42,18 +42,33 @@ h1 {
 }
 
 p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     font-family: 'Roboto', sans-serif;
 }
 
-#game-content p {
-    font-size: 1.25rem
+#scoreDiv p {
+    font-size: 1.25rem;
+    margin-bottom: .5rem;
+}
+
+#scoreDiv {
+    display: inline-block;
+    padding: 1%;
+    background-color: #ebf5ec;
+    box-shadow: 1px 1px 7px #D3D3D3;
+    /*color: white;*/
+}
+
+#outerDiv{
+    margin-bottom: 1.5rem;
 }
 
 button {
     font-size: 1.25rem;
     border-radius: 5px;
     font-family: 'Roboto', sans-serif;
+    background-color: #fdd01f;
+    color: white;
 }
 
 img {
