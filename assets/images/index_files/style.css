@@ -1,0 +1,51 @@
+body {
+    font-size: 16px;
+}
+
+.container {
+    border: 1px solid black;
+    width: 90%;
+    margin: auto;
+    padding: 3%;
+    text-align: center;
+    margin-top: 3%;
+}
+
+h1 {
+    font-weight: bolder;
+    font-size: 2rem;
+    margin-bottom: 3%;
+}
+
+p {
+    margin-bottom: 1%;
+}
+
+li {
+    padding: .5rem;
+    margin-bottom: .5rem;
+    border: 1px solid black;
+    text-align: left;
+}
+#gameElements {
+    display: none;
+    border: 1px solid black;
+    width: 75%;
+    height: auto;
+    margin: auto;
+}
+#nextQ {
+    display: none;
+    margin: auto;
+}
+#gameResults {
+    display: none;
+    border: 1px solid black;
+    width: 75%;
+    height: auto;
+    margin: auto;
+}
+#bonusQ {
+    display: none;
+    margin: auto;
+}
